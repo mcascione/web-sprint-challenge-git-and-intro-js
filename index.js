@@ -208,18 +208,18 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
+// console.log("Task 1.1:", artists[0].name);
 
 
 //(2) Bio of the third artist (2nd index) in the array 
-
+// console.log("Task 1.2:", artists[2].bio)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
-
-
+artists[8].name = "Vincent Van Gogh";
+// console.log("Task 2:", artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -230,11 +230,11 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, index) {
+  return `the artist at index ${artists[index].id} is ${artists[index].name}`;
 }
 
-
+console.log("Task 3:", getArtistByIndex(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use listOfNames to do the following: 
@@ -244,11 +244,15 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(array) {
+  const newArray = [...array];
+  for (let i = 0; i < newArray.length; i++){
+    newArray[i] = array[i].name;
+  }
+  return newArray;
 }
 
-
+console.log("Task 4:", listOfNames(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
