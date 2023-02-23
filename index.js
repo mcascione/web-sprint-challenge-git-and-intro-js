@@ -344,7 +344,7 @@ function artistInfo(array, givenName){
  return(array[index].bio);
 }
 
-// console.log("Test 8:", artistInfo(artists, "Frida Kahlo"));
+// console.log("Task 8:", artistInfo(artists, "Frida Kahlo"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -356,11 +356,17 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array, nationality){
+  let sameNationality = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].nationality === nationality){
+      sameNationality.push(array[i].name);
+    }
+  }
+  return sameNationality;
 }
 
-
+// console.log("Task 9:", artistByCountry(artists, 'Spanish'));
 
 /* ***** END OF TASKS ***** */
 
